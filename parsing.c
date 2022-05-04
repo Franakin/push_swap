@@ -6,7 +6,7 @@
 /*   By: fpurdom <fpurdom@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/29 19:45:26 by fpurdom       #+#    #+#                 */
-/*   Updated: 2022/04/21 13:24:01 by fpurdom       ########   odam.nl         */
+/*   Updated: 2022/05/04 14:44:18 by fpurdom       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ static int	find_space(char	*arg, int k)
 	i = 0;
 	while (arg[i])
 	{
-		if (arg[i] == ' ')
-			return (i + 1);
+		while (arg[i] == ' ')
+		{
+			i++;
+			if (arg[i] != ' ')
+				return (i);
+		}
 		i++;
 	}
 	return (-k);

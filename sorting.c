@@ -6,7 +6,7 @@
 /*   By: fpurdom <fpurdom@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/30 18:42:49 by fpurdom       #+#    #+#                 */
-/*   Updated: 2022/04/21 13:35:14 by fpurdom       ########   odam.nl         */
+/*   Updated: 2022/05/04 14:45:02 by fpurdom       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	radix_sort(t_list **stack_a, t_list **stack_b, int argc)
 	int		i;
 	int		bit_iter;
 
-	max_i = argc - 2;
+	max_i = argc - 1;
 	bit_iter = 1;
 	while (bit_iter <= max_i)
 	{

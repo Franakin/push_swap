@@ -6,7 +6,7 @@
 /*   By: fpurdom <fpurdom@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/29 17:52:54 by fpurdom       #+#    #+#                 */
-/*   Updated: 2022/04/21 13:34:49 by fpurdom       ########   odam.nl         */
+/*   Updated: 2022/05/04 14:42:38 by fpurdom       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,9 @@ void	character_check(char **arg, int argc)
 		k = 0;
 		while (arg[i][k])
 		{
-			if (!ft_isdigit(arg[i][k]) && !(arg[i][k] == '-' && k == 0)
-				&& !(arg[i][k] == ' ' && k != 0))
+			if (!(arg[i][k] == '-' && (k == 0 || (arg[i][k - 1] == ' '
+					&& ft_isdigit(arg[i][k + 1]))))
+					&& !(arg[i][k] == ' ') && !ft_isdigit(arg[i][k]))
 				error(-2);
 			k++;
 		}
