@@ -6,7 +6,7 @@
 /*   By: fpurdom <fpurdom@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/30 18:42:49 by fpurdom       #+#    #+#                 */
-/*   Updated: 2022/05/04 14:45:02 by fpurdom       ########   odam.nl         */
+/*   Updated: 2022/05/05 13:04:17 by fpurdom       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,4 +73,10 @@ void	sorting(t_list *stack_a, int argc)
 		sort_five(&stack_a, &stack_b);
 	else
 		radix_sort(&stack_a, &stack_b, argc);
+	while (stack_a)
+	{
+		stack_b = stack_a;
+		free(stack_b);
+		stack_a = stack_a->next;
+	}
 }
